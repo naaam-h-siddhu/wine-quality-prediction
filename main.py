@@ -59,7 +59,7 @@ results = pd.DataFrame([['Logistic Regression', acc, prec, rec, f1]],
 
 
 # 2 SVM Linear
-clf = SVC(random_state=0, kernel='linear')
+clf = SVC(random_state=0, kernel='linear',class_weight='balanced')
 clf .fit(X_train,y_train)
 y_pred = clf.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
